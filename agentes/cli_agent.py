@@ -26,9 +26,9 @@ for tabela in tabelas:
     colunas_tabelas = cursor.fetchall()
     colunas[tabela[0]] = [coluna[0] for coluna in colunas_tabelas]
 
-cursor.close()
+# cursor.close()
 
-conn.close()
+# conn.close()
 
 prompt = f"""
     vocẽ é um assistente de SQL que opera para o banco de dados sql5817166.
@@ -54,4 +54,11 @@ query = reponse.output_text
 
 query = query.replace("```sql", "").replace("```", "")
 
-print(query)
+cursor.execute(query)
+
+resutado = cursor.fetchall()
+
+print(resutado)
+
+cursor.close()
+conn.close()
