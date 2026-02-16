@@ -49,4 +49,9 @@ reponse = openai.responses.create(
     ],
 )
 
-print(reponse)
+
+query = reponse.output_text
+
+query = query.replace("```sql", "").replace("```", "")
+
+print(query)
