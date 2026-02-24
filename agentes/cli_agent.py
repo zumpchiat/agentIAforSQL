@@ -54,6 +54,7 @@ query = reponse.output_text
 
 query = query.replace("```sql", "").replace("```", "")
 
+print(query)
 cursor.execute(query)
 
 resutado = cursor.fetchall()
